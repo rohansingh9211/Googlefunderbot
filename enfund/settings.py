@@ -88,7 +88,9 @@ DATABASES = {
     }
 }
 
-DATABASES['default']=dj_database_url.parse("postgresql://root:O1Iu0fuAhNZIPllhgz5Yz5rwMnyJGLFg@dpg-cv4h7r3tq21c73fa3fc0-a.oregon-postgres.render.com/enfund_db")
+DATABASES = {
+    'default': dj_database_url.config(default=os.getenv('DATABASE_URL'))
+}
 
 
 # Password validation
